@@ -1,0 +1,25 @@
+
+vlan 10
+ name Marketing
+vlan 20
+ name Accounting
+vlan 30
+ name Servers
+exite
+interface FastEthernet0/1
+ switchport mode access
+ switchport access vlan 10
+exite
+interface FastEthernet0/2
+ switchport mode access
+ switchport access vlan 20
+exite
+interface FastEthernet0/3
+ switchport mode access
+ switchport access vlan 30
+exite
+interface GigabitEthernet0/2
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30
+
